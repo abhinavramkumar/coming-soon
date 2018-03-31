@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,500,700");
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1rem;
+}
+
+div,
+section,
+header,
+article,
+aside,
+footer,
+main,
+p,
+a,
+span,
+button,
+label,
+input,
+textarea {
+  font-size: 1rem;
+  font-family: "Fira Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+div,
+section,
+header,
+article,
+aside,
+footer,
+main {
+  font-family: "Fira Sans", sans-serif;
+  margin: 0;
+}
+
+p,
+a,
+span,
+button {
+  font-size: 1rem;
+  line-height: 1.414rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+a,
+button {
+  padding: 0.75rem 1.15rem;
+  border: 1px solid #ccc;
+  background: #ccc;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  margin: 0;
+  display: inline-block;
+  line-height: 1.414rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+a:hover,
+button:hover {
+  background: #bbb;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+input,
+textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  line-height: 1.414rem;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 100ms ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid #4a2ce2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.75rem;
+  line-height: 3.8885rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: 3.1815rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.8rem;
+  line-height: 2.5452rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.45rem;
+  line-height: 2.0503rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.15rem;
+  line-height: 1.6261rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.414rem;
+  font-weight: 500;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@keyframes slideOut {
+  0% {
+  }
+  25% {
+    opacity: 0.5;
+    transform: translateZ(-500px);
+  }
+  75% {
+    opacity: 0.5;
+    transform: translateZ(-500px) translateX(-200%);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateZ(-500px) translateX(-200%);
+  }
+}
+
+@keyframes slideIn {
+  0%,
+  25% {
+    opacity: 0.5;
+    transform: translateZ(-500px) translateX(200%);
+  }
+  75% {
+    opacity: 0.5;
+    transform: translateZ(-500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0) translateX(0);
+  }
+}
+
+.slide-exit-active {
+  animation: slideOut 400ms both ease-in-out;
+}
+
+.slide-enter-active {
+  animation: slideIn 400ms both ease-in-out;
+}
+
+@keyframes movesFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(80%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scaleDown {
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.scale-enter,
+.scale-exit {
+  position: relative;
+}
+
+.scale-enter-active {
+  animation: movesFromRight 750ms both ease;
+  z-index: 2;
+}
+
+.scale-exit-active {
+  animation: scaleDown 750ms both ease;
+  z-index: 1;
+}
+
+.AppRouterParent {
+  overflow-x: hidden;
+}
+
+.ScreenTransitionParent {
+  min-height: calc(100vh - 40px);
+  background: #ebedf3;
+}
+
+.ScreenTransitionWrapper {
+  position: relative;
+  perspective: 1200px;
+  background: #ebedf3;
+  min-height: calc(100vh - 48px);
+  margin-top: -2px;
+  width: 100%;
+}
+
+.ScreenWrapper {
+  position: absolute;
+  min-height: calc(100vh - 100px);
+  width: 100%;
+  top: 50px;
+  left: 0;
+  background: #ebedf3;
+}
+
+.Navbar {
+  background: transparent;
+  height: 50px;
+  z-index: 10;
+  width: 100%;
+  position: relative;
+}
+
+.Navbar__Wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Navbar__Logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 85px;
+  width: 85px;
+  border: 1px solid #e35f5f;
+  background: #e35f5f;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.Navbar__NavLink {
+  background: transparent;
+  border: transparent;
+  transition: all 100ms ease-in-out;
+  position: relative;
+}
+
+svg.Navbar__Underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  stroke: #e35f5f;
+  stroke-width: 5;
+  transition: all 700ms ease-in-out;
+}
+
+.Navbar__NavLink.active svg.Navbar__Underline {
+  width: 100%;
+}
+/*# sourceMappingURL=main.css.map */
