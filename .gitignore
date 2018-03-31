@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 createReactSkeleton.py
+.sass-cache
 
 # testing
 /coverage
@@ -11,6 +12,7 @@ __test__
 # production
 /build
 *.scss
+*.scssc
 
 # misc
 .DS_Store
