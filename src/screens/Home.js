@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-
+import { Subscription } from "../components";
 class Home extends Component {
   render() {
     return (
       <div className="ScreenWrapper">
         <div className="container">
           <section className="Home">
+            {/* Header */}
             <header className="Home__Header">
               <h1>
                 Hi I'm Abhinav{" "}
@@ -15,6 +16,8 @@ class Home extends Component {
                 </span>
               </h1>
             </header>
+
+            {/* Intro */}
             <article className="Home__Intro">
               <p>
                 I create powerful web applications using Javascript, for Small &
@@ -30,6 +33,7 @@ class Home extends Component {
               <p>And most importantly I love playing basketball.</p>
             </article>
 
+            {/* Tech Stack */}
             <article className="Home__Tech-Stack">
               <h5>My go to Tech Stack: </h5>
               <div className="Home__Tech-Icons-Wrapper">
@@ -196,23 +200,10 @@ class Home extends Component {
               </div>
             </article>
 
-            <article className="Home__Subscription">
-              <p>Are you a Web Developer ?</p>
-              <p>
-                Subscribe to the Newsletter to Get Tutorials , Resources, Tips
-                'n' Tricks & become an awesome Web Developer.
-              </p>
-              <div className="Home__Subscription-Wrapper">
-                <input
-                  type="text"
-                  className="Home__Subscription-Input"
-                  placeholder="Sign Up and Be the first to know when this website launches."
-                />
-                <button className="Home__Subscribe-Button">
-                  Subscribe to the Newsletter
-                </button>
-              </div>
-            </article>
+            {/* Subscription */}
+            <Subscription />
+
+            {/* Link to sample projects */}
             <article className="Home__Sample-Projects">
               <p>Wanna checkout some of my projects in the meantime ?</p>
               <NavLink to="/sample-projects">See Some Sample Projects</NavLink>

@@ -1,14 +1,21 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/fontawesome-free-solid";
 import { history } from "../router/AppRouter";
-
+import projectsData from "../data/data";
+import { Project } from "../components";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/fontawesome-free-solid";
 class Projects extends Component {
   render() {
     return (
       <div className="ScreenWrapper">
         <div className="container">
+          <button
+            className="goBackButton"
+            onClick={() => history.goBack()}
+            title="Go Back"
+          >
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </button>
           <section className="Projects">
             {/* Page Header */}
             <article className="Projects__Header">
@@ -37,19 +44,9 @@ class Projects extends Component {
 
             {/* Projects List */}
             <article className="Projects__ProjectsList">
-              <div className="Projects__ProjectSingle">
-                <div className="Projects__ProjectSingle-Cover">
-                  <h4>Calc X</h4>
-                  <p>A simple text expression based calculator</p>
-                  <Link to="/sample-project/calc-x">View Project</Link>
-                </div>
-                <div className="Projects__ProjectSingle-Image">
-                  <img src="" alt="Calc X" />
-                </div>
-                <div className="Projects__ProjectSingle-Caption">
-                  <h4>Calc X</h4>
-                </div>
-              </div>
+              {projectsData.map(project => (
+                <Project project={project} key={project.id} />
+              ))}
             </article>
           </section>
         </div>
